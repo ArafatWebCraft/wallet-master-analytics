@@ -3,6 +3,9 @@ var options = {
     chart: {
         type: 'donut',
     },
+    legend: {
+        show: false  // This line hides the legend
+    },
     responsive: [{
         breakpoint: 480,
         options: {
