@@ -1,78 +1,80 @@
-var incomeData = [31, 40, 28, 51, 42, 100];
-var expenseData = [11, 32, 45, 32, 34, 52];
-
-var options = {
-  series: [{
-    name: 'income',
-    data: incomeData
-  }, {
-    name: 'expense',
-    data: expenseData
-  }],
+const options = {
   chart: {
-    height: 350,
-    type: 'area',
-    toolbar: {
-      show: false
-    },
-    background: 'none'  // Set the chart background to none
-  },
-  dataLabels: {
-    enabled: false
-  },
-  stroke: {
-    curve: 'smooth'
-  },
-  grid: {
-    show: true,  // Enable grid lines
-    borderColor: '#e7e7e7',  // Customize the color of the grid lines
-    strokeDashArray: 5,  // Optionally add dashed lines for the grid
-    xaxis: {
-      lines: {
-        show: true  // Show vertical grid lines
-      }
-    },
-    yaxis: {
-      lines: {
-        show: true  // Show horizontal grid lines
-      }
-    }
-  },
-  xaxis: {
-    type: 'datetime',
-    categories: [
-      "2018-09-19T00:00:00.000Z", 
-      "2018-09-19T01:30:00.000Z", 
-      "2018-09-19T02:30:00.000Z", 
-      "2018-09-19T03:30:00.000Z", 
-      "2018-09-19T04:30:00.000Z", 
-      "2018-09-19T05:30:00.000Z"
-    ]
+      height: "263",
+      maxWidth: "70%",
+      type: "line",
+      fontFamily: "Inter, sans-serif",
+      dropShadow: {
+          enabled: false,
+      },
+      toolbar: {
+          show: false,
+      },
   },
   tooltip: {
-    x: {
-      format: 'dd/MM/yy HH:mm'
-    }
-  }
-};
+      enabled: true,
+      x: {
+          show: false,
+      },
+  },
+  dataLabels: {
+      enabled: false,
+  },
+  stroke: {
+      width: 8,
+  },
+  grid: {
+      show: true,
+      strokeDashArray: 4,
+      padding: {
+          left: 2,
+          right: 2,
+          top: -26
+      },
+  },
+  series: [
+      {
+          name: "Income",
+          data: [6500, 6418, 6456, 6526, 6356, 6456, 6600, 6700, 6800, 6900, 7000, 7100], // Add values for all months
+          color: "#1A56DB",
+      },
+      {
+          name: "Expense",
+          data: [6456, 6356, 6526, 6332, 6418, 6500, 6600, 6700, 6800, 6900, 7000, 7100], // Add values for all months
+          color: "#7E3AF2",
+      },
+  ],
+  legend: {
+      show: false
+  },
+  stroke: {
+      curve: 'smooth'
+  },
+  xaxis: {
+      categories: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'], // Add all months
+      labels: {
+          show: true,
+          style: {
+              fontFamily: "Inter, sans-serif",
+              cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+          }
+      },
+      axisBorder: {
+          show: false,
+      },
+      axisTicks: {
+          show: false,
+      },
+  },
+  yaxis: {
+      show: false,
+  },
+}
 
-var chart = new ApexCharts(document.querySelector("#analytics_cahrt"), options);
-chart.render();
-
-document.getElementById('incomeBtn').addEventListener('click', function () {
-  chart.updateSeries([{
-      name: 'income',
-      data: incomeData
-  }]);
-});
-
-// Handle expense button click
-document.getElementById('expenseBtn').addEventListener('click', function () {
-  chart.updateSeries([{
-      name: 'expense',
-      data: expenseData
-  }]);
-});
+if (document.getElementById("line-chart") && typeof ApexCharts !== 'undefined') {
+  const chart = new ApexCharts(document.getElementById("line-chart"), options);
+  chart.render();
+}
 
 
 
