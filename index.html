@@ -1,22 +1,30 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/28a80c0308.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="src/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.bunny.net" />
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://kit.fontawesome.com/59539ec33f.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/28a80c0308.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="js/app.js" defer></script>
+    <title>Wallet Master</title>
 </head>
 
-<body>
+<body class="font-figtree antialiased">
+    <!-- start header section -->
+
+    <!-- end select month -->
+    <!-- start body chart section -->
     <section class="bg-[#eff0f2] pt-0 p-4 pb-0">
         <div class="flex md:flex-row flex-col md:space-x-5 space-y-5 md:space-y-0">
             <!-- start grid said bar analytics -->
             <div class="md:w-80 w-full rounded">
-
                 <div class="text-2xl font-bold capitalize p-5 text-[#477fd8]">
                     Analytics
                 </div>
@@ -52,7 +60,6 @@
                                         href="#"><span class="pr-2"><i
                                                 class="fa-solid fa-eye text-[0.7rem] text-[#477FD8]"></i></span>Cash</a>
                                 </li>
-
                             </ul>
                         </div>
                     </div>
@@ -70,10 +77,11 @@
                             class="mt-2 w-full bg-white border border-gray-300 rounded shadow-lg z-10">
                             <ul class="py-1">
                                 <li id="allCategories"
-                                    class="px-4 py-1 text-[0.9rem] text-[#354052] hover:bg-gray-100 cursor-pointer"><a
-                                        href="#"><span class="pr-2"><i
+                                    class="px-4 py-1 text-[0.9rem] text-[#354052] hover:bg-gray-100 cursor-pointer">
+                                    <a href="#"><span class="pr-2"><i
                                                 class="fa-solid fa-eye text-[0.7rem] text-[#477FD8]"></i></span>All
-                                        Categories</a></li>
+                                        Categories</a>
+                                </li>
                                 <li id="food"
                                     class="px-4 py-1 text-[0.9rem] text-[#354052] hover:bg-gray-100 cursor-pointer"><a
                                         href="#"><span class="pr-2"><i
@@ -92,7 +100,8 @@
                                 <li id="transport"
                                     class="px-4 py-1 text-[0.9rem] text-[#354052] hover:bg-gray-100 cursor-pointer"><a
                                         href="#"><span class="pr-2"><i
-                                                class="fa-solid fa-eye text-[0.7rem] text-[#477FD8]"></i></span>Life &
+                                                class="fa-solid fa-eye text-[0.7rem] text-[#477FD8]"></i></span>Life
+                                        &
                                         Entertainment</a></li>
                                 <li id="transport"
                                     class="px-4 py-1 text-[0.9rem] text-[#354052] hover:bg-gray-100 cursor-pointer"><a
@@ -136,11 +145,12 @@
                         </div>
                         <div id="labelDropdown" style="display: none;"
                             class="mt-2 w-full bg-white border  border-gray-300 rounded shadow-lg z-10">
-                            <div class="label_search rounded flex flex-col-2 flex-row justify-between items-center border-1 border-black-600"
-                                onclick="labelDropdowns()">
-                                <input type="text" class="outline-none px-2 py-2 w-[95%]" autocomplete="off"
-                                    placeholder="Choose">
-                                <span class="pr-3"><i class="fa-solid fa-caret-down"></i></span>
+                            <div class="label_search rounded border-1 border-black-600" onclick="labelDropdowns()">
+                                <div class="flex items-center justify-between">
+                                    <input type="text" class="outline-none px-2 py-2 w-[90%]" autocomplete="off"
+                                        placeholder="Choose">
+                                    <span class="pr-3"><i class="fa-solid fa-caret-down"></i></span>
+                                </div>
                                 <div style="display: none;" id="labelnotFound"
                                     class="bg-white py-2 px-2 border text-[#007aff]">
                                     <h3>Not Found</h3>
@@ -528,10 +538,9 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- start table -->
                     <div class="mt-8 shadow rounded-xl bg-white">
-                        <div class="relative overflow-x-auto px-4">
+                        <div class="relative px-4">
                             <table class="w-full text-sm text-center rtl:text-right  md:table-fixed">
                                 <tr class="border-b text-[#334B71]">
                                     <th scope="col" class="px-6 text-left text-[1.1rem] py-6">
@@ -541,32 +550,36 @@
                                     <th scope="col" class="px-6 text-[1.1rem] py-5">
                                         Current period
                                     </th>
-                                    <th scope="col" class="px-6 text-[1.1rem] py-5">
+                                    <th scope="col" class="px-6 hidden md:table-cell text-[1.1rem] py-5">
                                         Previous period
                                     </th>
-                                    <th scope="col" class="px-6 py-5 text-[1.1rem]">
+                                    <th scope="col" class="px-6 py-5 text-[1.1rem] md:table-cell hidden">
                                         Date
                                     </th>
                                 </tr>
                                 </thead>
                                 <tbody class="">
-                                    <tr class=" relative hover:bg-[#eff0f2] text-[0.9rem] text-[#333]">
-
-                                        <td scope="row" class="px-6 py-4 text-center items-center flex">
-
-                                            <div
-                                                class="flex justify-center items-center w-10 h-10 rounded-full bg-red-500 text-white text-[15px] mr-3">
-                                                <span class="text-[1.2rem]"><i class="ri-coins-line"></i></span>
+                                    <tr class="shadow md:shadow-none hover:bg-[#eff0f2] text-[0.9rem] text-[#334B71]">
+                                        <td scope="row" class="px-6 py-4 text-center items-center">
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="flex justify-center items-center w-10 h-10 rounded-full bg-red-500 text-white text-[15px] mr-3">
+                                                    <span class="text-[1.2rem]"><i class="ri-coins-line"></i></span>
+                                                </div>
+                                                <span>Income</span>
                                             </div>
-                                            Income
+                                            <dl class="text-left md:hidden mt-2 leading-8">
+                                                <dt class="text-2xl text-[#007aff]">Previous period</dt>
+                                            </dl>
                                         </td>
                                         <td class="px-6 py-4 text-center uppercase relative">
+                                            <span>bdt 0.00</span>
+                                            <p class="mt-6 md:hidden">bdt 0.00</p>
+                                        </td>
+                                        <td class="px-6 hidden md:table-cell py-4 text-center uppercase">
                                             bdt 0.00
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
-                                            bdt 0.00
-                                        </td>
-                                        <td class="px-6 py-4">
+                                        <td class="px-6 py-4 hidden md:table-cell">
                                             20/10/2399
                                         </td>
                                     </tr>
@@ -574,7 +587,7 @@
                             </table>
                         </div><!--end table first-->
 
-                        <div class="relative  overflow-x-auto px-4"><!--start second table -->
+                        <div class="relative  px-4"><!--start second table -->
                             <table class="w-full text-sm text-center rtl:text-right md:table-fixed">
                                 <thead class="text-xs text-gray-700 capitalize bg-gray-50 text-[14px]">
                                     <tr class="border -b text-[#334B71]">
@@ -584,195 +597,269 @@
                                         <th scope="col" class="px-6 py-3 text-[1.1rem] relative">
                                             Current period
                                         </th>
-                                        <th scope="col" class="px-6 text-[1.1rem] py-3">
+                                        <th scope="col" class="px-6 md:table-cell hidden text-[1.1rem] py-3">
                                             Previous period
                                         </th>
-                                        <th scope="col" class="px-6 py-3 text-[1.1rem]">
+                                        <th scope="col" class="px-6 py-3 text-[1.1rem] md:table-cell hidden">
                                             Date
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="border-b text-[0.9rem] hover:bg-[#eff0f2] text-[#958E8E]">
-                                        <td scope="row" class="px-6 py-3 text-left items-center flex">
-                                            <div
-                                                class="flex justify-center items-center w-10 h-10 rounded-full bg-orange-500 text-white text-[15px] mr-3">
-                                                <span class="text-[1.2rem]"><i class="ri-bread-fill"></i></span>
+                                    <tr class="shadow md:shadow-none hover:bg-[#eff0f2] text-[0.9rem] text-[#334B71]">
+                                        <td scope="row" class="px-6 py-4 text-center items-center">
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="flex justify-center items-center w-10 h-10 rounded-full bg-orange-500 text-white text-[15px] mr-3">
+                                                    <span class="text-[1.2rem]"><i
+                                                            class="fa-solid fa-utensils"></i></span>
+                                                </div>
+                                                <span>Food & Beverages</span>
                                             </div>
-                                            Food & Drinks
+                                            <dl class="text-left md:hidden mt-2 leading-8">
+                                                <dt class="text-2xl text-[#007aff]">Previous period</dt>
+                                            </dl>
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
+                                        <td class="px-6 py-4 text-center uppercase relative">
+                                            <span>bdt 0.00</span>
+                                            <p class="mt-6 md:hidden">bdt 0.00</p>
+                                        </td>
+                                        <td class="px-6 hidden md:table-cell py-4 text-center uppercase">
                                             bdt 0.00
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
-                                            bdt 0.00
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            10/12/2024
+                                        <td class="px-6 py-4 hidden md:table-cell">
+                                            20/10/2399
                                         </td>
                                     </tr>
-                                    <tr class="border-b text-[0.9rem] hover:bg-[#eff0f2] text-[#958E8E]">
-                                        <td scope="row" class="px-6 py-3 text-left items-center flex">
-                                            <div
-                                                class="flex justify-center items-center w-10 h-10 rounded-full bg-amber-400 text-white text-[15px] mr-3">
-                                                <span class="text-[1.2rem]"><i
-                                                        class="ri-shopping-cart-2-fill"></i></span>
+                                    <tr class="shadow md:shadow-none hover:bg-[#eff0f2] text-[0.9rem] text-[#334B71]">
+                                        <td scope="row" class="px-6 py-4 text-center items-center">
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="flex justify-center items-center w-10 h-10 rounded-full bg-amber-500  text-white text-[15px] mr-3">
+                                                    <span class="text-[1.2rem]"><i
+                                                            class="fa-solid fa-cart-shopping"></i></span>
+                                                </div>
+                                                <span>
+                                                    Shopping</span>
                                             </div>
-                                            Shopping
+                                            <dl class="text-left md:hidden mt-2 leading-8">
+                                                <dt class="text-2xl text-[#007aff]">Previous period</dt>
+                                            </dl>
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
+                                        <td class="px-6 py-4 text-center uppercase relative">
+                                            <span>bdt 0.00</span>
+                                            <p class="mt-6 md:hidden">bdt 0.00</p>
+                                        </td>
+                                        <td class="px-6 hidden md:table-cell py-4 text-center uppercase">
                                             bdt 0.00
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
-                                            bdt 0.00
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            20/03/2024
+                                        <td class="px-6 py-4 hidden md:table-cell">
+                                            20/10/2399
                                         </td>
                                     </tr>
-                                    <tr class="border-b text-[0.9rem] hover:bg-[#eff0f2] text-[#958E8E]">
-                                        <td scope="row" class="px-6 py-3 text-left items-center flex">
-                                            <div
-                                                class="flex justify-center items-center w-10 h-10 rounded-full bg-lime-500 text-white text-[15px] mr-3">
-                                                <span class="text-[1.2rem]"><i class="ri-home-8-fill"></i></span>
+                                    <tr class="shadow md:shadow-none hover:bg-[#eff0f2] text-[0.9rem] text-[#334B71]">
+                                        <td scope="row" class="px-6 py-4 text-center items-center">
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="flex justify-center items-center w-10 h-10 rounded-full bg-yellow-500 text-white text-[15px] mr-3">
+                                                    <span class="text-[1.2rem]"><i
+                                                            class="fa-solid fa-house-chimney-user"></i></span>
+                                                </div>
+                                                <span>Housing</span>
                                             </div>
-                                            Housing
+                                            <dl class="text-left md:hidden mt-2 leading-8">
+                                                <dt class="text-2xl text-[#007aff]">Previous period</dt>
+                                            </dl>
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase text-[#958E8E] font-[450]">
-                                            bdt 15000.00
+                                        <td class="px-6 py-4 text-center uppercase relative">
+                                            <span>bdt 0.00</span>
+                                            <p class="mt-6 md:hidden">bdt 0.00</p>
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase text-[#958E8E] font-[450]">
-                                            bdt 15000.00
+                                        <td class="px-6 hidden md:table-cell py-4 text-center uppercase">
+                                            bdt 0.00
                                         </td>
-                                        <td class="px-6 py-4">
-                                            20/01/2010
+                                        <td class="px-6 py-4 hidden md:table-cell">
+                                            20/10/2399
                                         </td>
                                     </tr>
-                                    <tr class="border-b text-[0.9rem] hover:bg-[#eff0f2] text-[#958E8E]">
-                                        <td scope="row" class="px-6 py-3 text-left items-center flex">
-                                            <div
-                                                class="flex justify-center items-center w-10 h-10 rounded-full bg-green-500 text-white text-[15px] mr-3">
-                                                <span class="text-[1.2rem]"><i class="ri-roadster-fill"></i></span>
+                                    <tr class="shadow md:shadow-none hover:bg-[#eff0f2] text-[0.9rem] text-[#334B71]">
+                                        <td scope="row" class="px-6 py-4 text-center items-center">
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="flex justify-center items-center w-10 h-10 rounded-full bg-lime-500  text-white text-[15px] mr-3">
+                                                    <span class="text-[1.2rem]"><i class="fa-solid fa-car"></i></span>
+                                                </div>
+                                                <span>
+                                                    Transportation</span>
                                             </div>
-                                            Transportation
+                                            <dl class="text-left md:hidden mt-2 leading-8">
+                                                <dt class="text-2xl text-[#007aff]">Previous period</dt>
+                                            </dl>
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
+                                        <td class="px-6 py-4 text-center uppercase relative">
+                                            <span>bdt 0.00</span>
+                                            <p class="mt-6 md:hidden">bdt 0.00</p>
+                                        </td>
+                                        <td class="px-6 hidden md:table-cell py-4 text-center uppercase">
                                             bdt 0.00
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
-                                            bdt 0.00
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            20/11/2023
+                                        <td class="px-6 py-4 hidden md:table-cell">
+                                            20/10/2399
                                         </td>
                                     </tr>
-                                    <tr class="border-b text-[0.9rem] hover:bg-[#eff0f2] text-[#958E8E]">
-                                        <td scope="row" class="px-6 py-3 text-left items-center flex">
-                                            <div
-                                                class="flex justify-center items-center w-10 h-10 rounded-full bg-emerald-500 text-white text-[15px] mr-3">
-                                                <span class="text-[1.2rem]"><i class="ri-dv-line"></i></span>
+                                    <tr class="shadow md:shadow-none hover:bg-[#eff0f2] text-[0.9rem] text-[#334B71]">
+                                        <td scope="row" class="px-6 py-4 text-center items-center">
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="flex justify-center items-center w-10 h-10 rounded-full bg-cyan-500  text-white text-[15px] mr-3">
+                                                    <span class="text-[1.2rem]"><i
+                                                            class="fa-solid fa-gas-pump"></i></span>
+                                                </div>
+                                                <span>
+                                                    Vehicle</span>
                                             </div>
-                                            Vehicle
+                                            <dl class="text-left md:hidden mt-2 leading-8">
+                                                <dt class="text-2xl text-[#007aff]">Previous period</dt>
+                                            </dl>
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
+                                        <td class="px-6 py-4 text-center uppercase relative">
+                                            <span>bdt 0.00</span>
+                                            <p class="mt-6 md:hidden">bdt 0.00</p>
+                                        </td>
+                                        <td class="px-6 hidden md:table-cell py-4 text-center uppercase">
                                             bdt 0.00
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
-                                            bdt 0.00
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            23/01/2011
+                                        <td class="px-6 py-4 hidden md:table-cell">
+                                            20/10/2399
                                         </td>
                                     </tr>
-                                    <tr class="border-b text-[0.9rem] hover:bg-[#eff0f2] text-[#958E8E]">
-                                        <td scope="row" class="px-6 py-3 text-left items-center flex">
-                                            <div
-                                                class="flex justify-center items-center w-12 h-10 rounded-full bg-[#f44336] text-white text-[15px] mr-3">
-                                                <span class="text-[1.2rem]"><i class="ri-lifebuoy-line"></i></span>
+                                    <tr class="shadow md:shadow-none hover:bg-[#eff0f2] text-[0.9rem] text-[#334B71]">
+                                        <td scope="row" class="px-6 py-4 text-center items-center">
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="flex justify-center items-center w-10 h-10 rounded-full bg-sky-500  text-white text-[15px] mr-3">
+                                                    <span class="text-[1.2rem]"><i
+                                                            class="fa-regular fa-life-ring"></i></span>
+                                                </div>
+                                                <span class="text-left">
+                                                    Life & Entertainment</span>
                                             </div>
-                                            Life and Entertainment
+                                            <dl class="text-left md:hidden mt-2 leading-8">
+                                                <dt class="text-2xl text-[#007aff]">Previous period</dt>
+                                            </dl>
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
+                                        <td class="px-6 py-4 text-center uppercase relative">
+                                            <span>bdt 0.00</span>
+                                            <p class="mt-6 md:hidden">bdt 0.00</p>
+                                        </td>
+                                        <td class="px-6 hidden md:table-cell py-4 text-center uppercase">
                                             bdt 0.00
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
-                                            bdt 0.00
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            20/10/2015
+                                        <td class="px-6 py-4 hidden md:table-cell">
+                                            20/10/2399
                                         </td>
                                     </tr>
-                                    <tr class="border-b text-[0.9rem] hover:bg-[#eff0f2] text-[#958E8E]">
-                                        <td scope="row" class="px-6 py-3 text-left items-center flex">
-                                            <div
-                                                class="flex justify-center items-center w-14 h-10 rounded-full bg-teal-400 text-white text-[15px] mr-3">
-                                                <span class="text-[1.2rem]"><i class="ri-speak-fill"></i></span>
+                                    <tr class="shadow md:shadow-none hover:bg-[#eff0f2] text-[0.9rem] text-[#334B71]">
+                                        <td scope="row" class="px-6 py-4 text-center items-center">
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="flex justify-center items-center w-10 h-10 rounded-full bg-blue-600  text-white text-[15px] mr-3">
+                                                    <span class="text-[1.2rem]"><i class="fa-solid fa-tty"></i></span>
+                                                </div>
+                                                <span class="text-left">
+                                                    Communication, PC</span>
                                             </div>
-                                            Communication,PC
+                                            <dl class="text-left md:hidden mt-2 leading-8">
+                                                <dt class="text-2xl text-[#007aff]">Previous period</dt>
+                                            </dl>
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
+                                        <td class="px-6 py-4 text-center uppercase relative">
+                                            <span>bdt 0.00</span>
+                                            <p class="mt-6 md:hidden">bdt 0.00</p>
+                                        </td>
+                                        <td class="px-6 hidden md:table-cell py-4 text-center uppercase">
                                             bdt 0.00
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
-                                            bdt 0.00
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            17/03/2017
+                                        <td class="px-6 py-4 hidden md:table-cell">
+                                            20/10/2399
                                         </td>
                                     </tr>
-                                    <tr class="border-b text-[0.9rem] hover:bg-[#eff0f2] text-[#958E8E]">
-                                        <td scope="row" class="px-6 py-3 text-left items-center flex">
-                                            <div
-                                                class="flex justify-center items-center w-10 h-10 rounded-full bg-blue-500 text-white text-[15px] mr-3">
-                                                <span class="text-[1.2rem]"><i
-                                                        class="ri-exchange-dollar-fill"></i></span>
+                                    <tr class="shadow md:shadow-none hover:bg-[#eff0f2] text-[0.9rem] text-[#334B71]">
+                                        <td scope="row" class="px-6 py-4 text-center items-center">
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="flex justify-center items-center w-10 h-10 rounded-full bg-indigo-600  text-white text-[15px] mr-3">
+                                                    <span class="text-[1.2rem]"><i
+                                                            class="fa-solid fa-dollar-sign"></i></span>
+                                                </div>
+                                                <span class="text-left">
+                                                    Financial expenses</span>
                                             </div>
-                                            Finalcial expense
+                                            <dl class="text-left md:hidden mt-2 leading-8">
+                                                <dt class="text-2xl text-[#007aff]">Previous period</dt>
+                                            </dl>
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
+                                        <td class="px-6 py-4 text-center uppercase relative">
+                                            <span>bdt 0.00</span>
+                                            <p class="mt-6 md:hidden">bdt 0.00</p>
+                                        </td>
+                                        <td class="px-6 hidden md:table-cell py-4 text-center uppercase">
                                             bdt 0.00
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
-                                            bdt 0.00
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            10/11/2018
+                                        <td class="px-6 py-4 hidden md:table-cell">
+                                            20/10/2399
                                         </td>
                                     </tr>
-                                    <tr class="border-b text-[0.9rem] hover:bg-[#eff0f2] text-[#958E8E]">
-                                        <td scope="row" class="px-6 py-3 text-left items-center flex">
-                                            <div
-                                                class="flex justify-center items-center w-10 h-10 rounded-full bg-indigo-500 text-white text-[15px] mr-3">
-                                                <span class="text-[1.2rem]"><i class="ri-building-fill"></i></span>
+                                    <tr class="shadow md:shadow-none hover:bg-[#eff0f2] text-[0.9rem] text-[#334B71]">
+                                        <td scope="row" class="px-6 py-4 text-center items-center">
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="flex justify-center items-center w-10 h-10 rounded-full bg-violet-600  text-white text-[15px] mr-3">
+                                                    <span class="text-[1.2rem]"><i
+                                                            class="fa-solid fa-money-bill"></i></span>
+                                                </div>
+                                                <span>
+                                                    Investments</span>
                                             </div>
-                                            Investments
+                                            <dl class="text-left md:hidden mt-2 leading-8">
+                                                <dt class="text-2xl text-[#007aff]">Previous period</dt>
+                                            </dl>
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
+                                        <td class="px-6 py-4 text-center uppercase relative">
+                                            <span>bdt 0.00</span>
+                                            <p class="mt-6 md:hidden">bdt 0.00</p>
+                                        </td>
+                                        <td class="px-6 hidden md:table-cell py-4 text-center uppercase">
                                             bdt 0.00
                                         </td>
-                                        <td class="px-6 py-4 text-cetner uppercase">
-                                            bdt 0.00
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            10/12/2019
+                                        <td class="px-6 py-4 hidden md:table-cell">
+                                            20/10/2399
                                         </td>
                                     </tr>
-                                    <tr class="border-b text-[0.9rem] hover:bg-[#eff0f2] text-[#958E8E]">
-                                        <td scope="row" class="px-6 py-3 text-left items-center flex">
-                                            <div
-                                                class="flex justify-center items-center w-10 h-10 rounded-full bg-rose-500 text-white text-[15px] mr-3">
-                                                <span class="text-[1.2rem]"><i class="ri-menu-line"></i></span>
+                                    <tr class="shadow md:shadow-none hover:bg-[#eff0f2] text-[0.9rem] text-[#334B71]">
+                                        <td scope="row" class="px-6 py-4 text-center items-center">
+                                            <div class="flex items-center">
+                                                <div
+                                                    class="flex justify-center items-center w-10 h-10 rounded-full bg-fuchsia-600  text-white text-[15px] mr-3">
+                                                    <span class="text-[1.2rem]"><i class="fa-solid fa-bars"></i>
+                                                    </span>
+                                                </div>
+                                                <span>
+                                                    Others</span>
                                             </div>
-                                            Others
+                                            <dl class="text-left md:hidden mt-2 leading-8">
+                                                <dt class="text-2xl text-[#007aff]">Previous period</dt>
+                                            </dl>
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
+                                        <td class="px-6 py-4 text-center uppercase relative">
+                                            <span>bdt 0.00</span>
+                                            <p class="mt-6 md:hidden">bdt 0.00</p>
+                                        </td>
+                                        <td class="px-6 hidden md:table-cell py-4 text-center uppercase">
                                             bdt 0.00
                                         </td>
-                                        <td class="px-6 py-4 text-center uppercase">
-                                            bdt 0.00
-                                        </td>
-                                        <td class="px-6 py-4">
-                                            23/19/2012
+                                        <td class="px-6 py-4 hidden md:table-cell">
+                                            20/10/2399
                                         </td>
                                     </tr>
                                 </tbody>
@@ -783,11 +870,6 @@
             </div>
     </section>
     <!-- end body section -->
-
-    <!-- start js link -->
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="js/app.js"></script>
-
 </body>
 
 </html>
